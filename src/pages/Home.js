@@ -1,13 +1,17 @@
 import React from 'react'
+import Container from '@material-ui/core/Container';
+
 import SearchAppBar from '../components/SearchAppBar'
 import ScrollableMenu from '../components/ScrollableMenu'
+import ScrollableGenre from '../components/ScrollableGenre'
 
 const Home = () => {
   return (
-    <div>
+    <Container>
       <SearchAppBar />
       <ScrollableMenu />
-    </div>
+      <ScrollableGenre />
+    </Container>
   )
 }
 
