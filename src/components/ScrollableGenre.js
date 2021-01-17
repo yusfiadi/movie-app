@@ -9,11 +9,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     width: '100%',
+    marginBottom: 40
   },
   chip: {
     textTransform: 'none',
     marginRight: 20,
-    fontSize: 16
+    fontSize: 16,
+    paddingRight: 7,
+    paddingLeft: 7
   }
 }));
 
