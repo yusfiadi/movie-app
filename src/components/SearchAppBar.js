@@ -9,7 +9,8 @@ import search from '../assets/icons/search.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    marginBottom: 20
   },
   menuButton: {
     marginRight: theme.spacing(2)
@@ -21,7 +22,7 @@ export default function SearchAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position='static' style={{ backgroundColor: '#ffffff', boxShadow: 'none', marginBottom: 20 }}>
+      <AppBar position='static' style={{ backgroundColor: '#ffffff', boxShadow: 'none' }}>
         <Toolbar>
           <IconButton
             edge='start'
