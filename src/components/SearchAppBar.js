@@ -3,8 +3,9 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import { makeStyles } from '@material-ui/core/styles'
-import MenuIcon from '@material-ui/icons/Menu'
-import SearchIcon from '@material-ui/icons/Search'
+
+import menu from '../assets/icons/menu.png'
+import search from '../assets/icons/search.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +21,7 @@ export default function SearchAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position='static' style={{ backgroundColor: '#ffffff', boxShadow: 'none'}}>
+      <AppBar position='static' style={{ backgroundColor: '#ffffff', boxShadow: 'none', marginBottom: 20 }}>
         <Toolbar>
           <IconButton
             edge='start'
@@ -28,11 +29,11 @@ export default function SearchAppBar() {
             color='default'
             aria-label='open drawer'
           >
-            <MenuIcon />
+            <img src={menu} alt='Menu Icon' style={{ width: 24 }} />
           </IconButton>
 
-          <IconButton aria-label="search" color="default" style={{ marginLeft: 'auto', padding: 0}}>
-            <SearchIcon />
+          <IconButton aria-label="search" color="default" style={{ marginLeft: 'auto', padding: 0 }}>
+            <img src={search} alt='Search Icon' style={{ width: 24 }} />
           </IconButton>
         </Toolbar>
       </AppBar>
