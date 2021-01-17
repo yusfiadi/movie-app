@@ -36,6 +36,9 @@ export default function ScrollableGenre() {
           <Chip label="Comedy" variant="outlined" className={classes.chip} />
           <Chip label="Drama" variant="outlined"  className={classes.chip} />
           <Chip label="Horror" variant="outlined"  className={classes.chip} />
+          <Chip label="Romance" variant="outlined"  className={classes.chip} />
+          <Chip label="Thriller" variant="outlined"  className={classes.chip} />
+          <Chip label="Adventure" variant="outlined"  className={classes.chip} />
         </Tabs>
       </AppBar>
     </div>
