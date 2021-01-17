@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     width: '100%',
+    marginBottom: 40
   },
   tab: {
     textTransform: 'none',
@@ -28,10 +29,17 @@ export default function ScrollableMenu() {
     <div className={classes.root}>
       <AppBar position="static" color="default" style={{ backgroundColor: '#ffffff', boxShadow: 'none' }}>
         <Tabs
+          TabIndicatorProps={{
+            style: {
+              height: 6,
+              width: 40,
+              marginLeft: 10,
+              borderRadius: 100,
+              backgroundColor: '#FE6D8E'
+            }
+          }}
           value={value}
           onChange={handleChange}
-          indicatorColor="secondary"
-          textColor="primary"
           variant="scrollable"
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
@@ -41,15 +49,6 @@ export default function ScrollableMenu() {
           <Tab label="Coming Soon" className={classes.tab} />
         </Tabs>
       </AppBar>
-      {/* <TabPanel value={value} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel> */}
     </div>
   );
 }
