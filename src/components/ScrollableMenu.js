@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tab: {
     textTransform: 'none',
-    marginRight: 20,
+    marginRight: 10,
     fontSize: 28
   }
 }));
