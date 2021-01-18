@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginBottom: 20,
-    marginTop: 40
+    paddingTop: 40
   },
   menuButton: {
     marginRight: theme.spacing(2)
