@@ -1,4 +1,5 @@
 import React from 'react'
+// Still Struggle about Cropping Image based on the design
 // import FordVFerrari from '../assets/images/ford-v-ferrari2.png'
 
 const MovieImage = () => {

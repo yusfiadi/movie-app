@@ -7,38 +7,74 @@ import {makeStyles} from '@material-ui/core/styles'
 import AddIcon from '@material-ui/icons/Add';
 
 const useStyles = makeStyles((theme) => ({
-  chip: {
+  chipStyle: {
     textTransform: 'none',
     marginRight: 10,
     fontSize: 14,
     marginBottom: 10
+  },
+  titleStyle: {
+    marginBottom: 5
+  },
+  boxInfoStyle: {
+    textAlign: 'left', 
+    opacity: 0.4, 
+    marginBottom: 20
+  },
+  boxAddStyle: {
+    width: 64, 
+    height: 64, 
+    backgroundColor: '#FE6D8E', 
+    borderRadius: 20
+  },
+  addStyle: {
+    color: 'white', 
+    paddingTop: 14
+  },
+  spanStyle: {
+    marginRight: 28
   }
 }));
 
 const MovieInfo = () => {
   const classes = useStyles()
 
+  const dummyData = {
+    title: 'Ford v Ferrari',
+    releaseYear: '2019',
+    rating: 'PG-13',
+    duration: '2h 32min'
+  }
+
+  const dummyChips= [
+    'Action',
+    'Thriller',
+    'Drama'
+  ]
+
+  const renderChips = dummyChips.map((chip) => (
+    <Chip label={chip} variant="outlined" className={classes.chipStyle} />
+  ))
+
   return (
     <div style={{ marginBottom: 30 }}>
       <Grid container spacing={3}>
         <Grid item xs={9}>
-          <Typography variant="h4" align='left' style={{ marginBottom: 5}}>
-            Ford v Ferrari
+          <Typography variant="h4" align='left' className={classes.titleStyle}>
+            {dummyData.title}
           </Typography>
-          <Box style={{ textAlign: 'left', opacity: 0.4, marginBottom: 20 }}>
-            <span style={{ marginRight: 28 }}>2019</span>
-            <span style={{ marginRight: 28 }}>PG-13</span>
-            <span>2h 32min</span>
+          <Box className={classes.boxInfoStyle}>
+            <span className={classes.spanStyle}>{dummyData.releaseYear}</span>
+            <span className={classes.spanStyle}>{dummyData.rating}</span>
+            <span>{dummyData.duration}</span>
           </Box>
-          <Box style={{ textAlign: 'left' }}>
-            <Chip label="Action" variant="outlined" className={classes.chip} />
-            <Chip label="Thriller" variant="outlined" className={classes.chip} />
-            <Chip label="Drama" variant="outlined" className={classes.chip} />
+          <Box align='left'>
+            {renderChips}
           </Box>
         </Grid>
         <Grid item xs={3}>
-          <Box style={{ width: 64, height: 64, backgroundColor: '#FE6D8E', borderRadius: 20 }}>
-            <AddIcon style={{ color: 'white', paddingTop: 14 }} fontSize='large' />
+          <Box className={classes.boxAddStyle}>
+            <AddIcon className={classes.addStyle} fontSize='large' />
           </Box>
         </Grid>
       </Grid>
