@@ -10,7 +10,8 @@ import search from '../assets/icons/search.png'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginBottom: 20
+    marginBottom: 20,
+    marginTop: 40
   },
   menuButton: {
     marginRight: theme.spacing(2)
