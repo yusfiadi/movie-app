@@ -16,6 +16,17 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2)
   },
+  appBar: {
+    backgroundColor: 'transparent', 
+    boxShadow: 'none'
+  },
+  iconMenu: {
+    width: 24
+  },
+  search: {
+    marginLeft: 'auto', 
+    padding: 0
+  }
 }))
 
 export default function SearchAppBar() {
@@ -23,19 +34,18 @@ export default function SearchAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position='static' style={{ backgroundColor: '#ffffff', boxShadow: 'none' }}>
+      <AppBar position='static' className={classes.appBar}>
         <Toolbar>
           <IconButton
             edge='start'
             className={classes.menuButton}
-            color='default'
             aria-label='open drawer'
           >
-            <img src={menu} alt='Menu Icon' style={{ width: 24 }} />
+            <img src={menu} alt='Menu Icon' className={classes.iconMenu} />
           </IconButton>
 
-          <IconButton aria-label="search" color="default" style={{ marginLeft: 'auto', padding: 0 }}>
-            <img src={search} alt='Search Icon' style={{ width: 24 }} />
+          <IconButton aria-label="search" color="default" className={classes.search}>
+            <img src={search} alt='Search Icon' className={classes.iconMenu} />
           </IconButton>
         </Toolbar>
       </AppBar>
