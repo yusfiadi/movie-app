@@ -8,13 +8,19 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingTop: 40,
-    // zIndex: 10,
     position: 'absolute',
     top: 0
   },
   menuButton: {
     marginRight: theme.spacing(2)
   },
+  backAppBar: {
+    backgroundColor: 'transparent',
+    boxShadow: 'none'
+  },
+  arrowBack: {
+    color: 'black'
+  }
 }))
 
 export default function BackAppBar() {
@@ -22,7 +28,7 @@ export default function BackAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position='static' style={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
+      <AppBar position='relative' className={classes.backAppBar}>
         <Toolbar>
           <IconButton
             edge='start'
@@ -30,7 +36,7 @@ export default function BackAppBar() {
             color='default'
             aria-label='open drawer'
           >
-            <ArrowBackIosIcon style={{ color: 'black' }} />
+            <ArrowBackIosIcon className={classes.arrowBack} />
           </IconButton>
         </Toolbar>
       </AppBar>
