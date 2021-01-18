@@ -16,10 +16,46 @@ const useStyles = makeStyles(theme => ({
   wrapIcon: {
     verticalAlign: 'middle',
     display: 'inline-flex'
+  },
+  movieImage: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginBottom: 40,
+    marginTop: 10
+  },
+  movieTitle: {
+    marginBottom: 10
+  },
+  starIcon: {
+    color: '#FCC419',
+    marginRight: 8
   }
 }));
 
+const movies = [
+  {
+    id: 1,
+    title: 'Ford v Ferrari',
+    image: fordVFerrari,
+    rating: '4.8'
+  },
+  {
+    id: 2,
+    title: 'Downhill',
+    image: downhill,
+    rating: '4.3'
+  },
+  {
+    id: 3,
+    title: 'The Call of The Wild',
+    image: theCallOfTheWild,
+    rating: '4.4'
+  }
+]
+
 export default function SimpleSlider() {
+  const classes = useStyles()
+
   var settings = {
     className: "center",
     centerMode: true,
@@ -43,32 +79,20 @@ export default function SimpleSlider() {
     ]
   };
 
-  const classes = useStyles()
+  const movieLists = movies.map((movie) => (
+    <div key={movie.id}>
+      <ImageShadow shadowHover={true} shadowBlur={40} shadowRadius={50} src={movie.image} className={classes.movieImage} />
+      <Typography variant='h4' className={classes.movieTitle}>{movie.title}</Typography>
+      <Typography variant="subtitle1" className={classes.wrapIcon}>
+        <StarIcon className={classes.starIcon} /> {movie.rating}
+      </Typography>
+    </div>
+  ))
 
   return (
     <div>
       <Slider {...settings} >
-        <div>
-          <ImageShadow shadowHover={true} shadowBlur={40} shadowRadius={50} src={fordVFerrari} style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: 40, marginTop: 10 }} />
-          <Typography variant='h4' style={{ marginBottom: 10 }}>Ford v Ferrari</Typography>
-          <Typography variant="subtitle1" className={classes.wrapIcon}>
-            <StarIcon style={{ color: '#FCC419', marginRight: 8 }} /> 4.8
-          </Typography>
-        </div>
-        <div>
-          <ImageShadow shadowHover={true} shadowBlur={40} shadowRadius={50} src={downhill} style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: 50, marginTop: 10 }} />
-          <Typography variant='h4' style={{ marginBottom: 10 }}>Downhill</Typography>
-          <Typography variant="subtitle1" className={classes.wrapIcon}>
-            <StarIcon style={{ color: '#FCC419', marginRight: 8 }} /> 4.8
-          </Typography>
-        </div>
-        <div>
-          <ImageShadow shadowHover={true} shadowBlur={40} shadowRadius={50} src={theCallOfTheWild} style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: 50, marginTop: 10 }} />
-          <Typography variant='h4' style={{ marginBottom: 10 }}>The Call of The Wild</Typography>
-          <Typography variant="subtitle1" className={classes.wrapIcon}>
-            <StarIcon style={{ color: '#FCC419', marginRight: 8 }} /> 4.8
-          </Typography>
-        </div>
+        {movieLists}
       </Slider>
     </div>
   );
