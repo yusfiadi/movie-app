@@ -16,8 +16,8 @@ const MovieRatings = () => {
 
   return (
     <div>
-      <div className={classes.root} style={{ height: 100, width: '90%', backgroundColor: '#F6F6F6', borderBottomLeftRadius: 60, borderTopLeftRadius: 60, right: 0, position: 'absolute', top: 250, boxShadow: '0px 50px 282px #9E9E9E', overflowX: 'hidden' }}>
-        <Grid container spacing={1} style={{ paddingLeft: 30, paddingTop: 13, }} justify="center" >
+      <div className={classes.root} style={{ height: 100, width: '92%', backgroundColor: '#F6F6F6', borderBottomLeftRadius: 60, borderTopLeftRadius: 60, right: 0, position: 'absolute', top: 250, boxShadow: '0px 50px 282px #9E9E9E', overflowX: 'hidden' }}>
+        <Grid container spacing={1} style={{ paddingLeft: 20, paddingTop: 13, }} justify="center" >
           <Grid item xs>
             <StarIcon style={{ color: '#FCC419' }} />
             <br />
