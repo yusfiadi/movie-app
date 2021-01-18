@@ -14,25 +14,25 @@ const crews = [
   {
     id: 1,
     name: 'James Mangold',
-    photo: JamesMangold,
+    avatar: JamesMangold,
     role: 'Director'
   },
   {
     id: 2,
     name: 'Matt Damon',
-    photo: MattDamon,
+    avatar: MattDamon,
     role: 'Caroll'
   },
   {
     id: 3,
     name: 'Christian Bale',
-    photo: ChristianBale,
+    avatar: ChristianBale,
     role: 'Ken Miles'
   },
   {
     id: 4,
     name: 'Caitriona Balfe',
-    photo: CaitrionaBalfe,
+    avatar: CaitrionaBalfe,
     role: 'Mollie'
   }
 ]
@@ -60,7 +60,7 @@ const CastAndCrew = () => {
   const CrewLists = crews.map((crew) => (
     <Grid item xs={3} key={crew.id} >
       <Box display="flex" justifyContent='center'>
-        <Avatar alt={crew.name} src={crew.photo} className={classes.avatarStyle} />
+        <Avatar alt={crew.name} src={crew.avatar} className={classes.avatarStyle} />
       </Box>
       <Typography variant="body2" align='center' gutterBottom className={classes.nameStyle}>
         {crew.name}
