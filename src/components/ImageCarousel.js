@@ -46,7 +46,7 @@ export default function SimpleSlider() {
   const classes = useStyles()
 
   return (
-    <div style={{ marginBottom: 100 }}>
+    <div>
       <Slider {...settings} >
         <div>
           <ImageShadow shadowHover={true} shadowBlur={40} shadowRadius={50} src={fordVFerrari} style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: 40, marginTop: 10 }} />
