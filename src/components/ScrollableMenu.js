@@ -14,7 +14,11 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'none',
     marginRight: 10,
     fontSize: 28
-  }
+  },
+  appBar: {
+    backgroundColor: 'transparent', 
+    boxShadow: 'none'
+  },
 }));
 
 export default function ScrollableMenu() {
@@ -25,9 +29,19 @@ export default function ScrollableMenu() {
     setValue(newValue);
   };
 
+  const tabsLabel = [
+    'In Theater',
+    'Box Office',
+    'Coming Soon'
+  ]
+
+  const renderTabs = tabsLabel.map((label) => (
+    <Tab label={label} className={classes.tab} />
+  ))
+
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default" style={{ backgroundColor: '#ffffff', boxShadow: 'none' }}>
+      <AppBar position="static" color="default" className={classes.appBar}>
         <Tabs
           TabIndicatorProps={{
             style: {
@@ -44,9 +58,7 @@ export default function ScrollableMenu() {
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
         >
-          <Tab label="In Theater" className={classes.tab} />
-          <Tab label="Box Office" className={classes.tab} />
-          <Tab label="Coming Soon" className={classes.tab} />
+          {renderTabs}
         </Tabs>
       </AppBar>
     </div>
