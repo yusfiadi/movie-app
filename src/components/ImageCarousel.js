@@ -49,7 +49,7 @@ export default function SimpleSlider() {
     <div style={{ marginBottom: 100 }}>
       <Slider {...settings} >
         <div>
-          <ImageShadow shadowHover={true} shadowBlur={40} shadowRadius={50} src={fordVFerrari} style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: 50, marginTop: 10 }} />
+          <ImageShadow shadowHover={true} shadowBlur={40} shadowRadius={50} src={fordVFerrari} style={{ marginLeft: 'auto', marginRight: 'auto', marginBottom: 40, marginTop: 10 }} />
           <Typography variant='h4' style={{ marginBottom: 10 }}>Ford v Ferrari</Typography>
           <Typography variant="subtitle1" className={classes.wrapIcon}>
             <StarIcon style={{ color: '#FCC419', marginRight: 8 }} /> 4.8
