@@ -8,7 +8,7 @@ import ImageCarousel from '../components/ImageCarousel'
 
 const Home = () => {
   return (
-    <Container>
+    <Container style={{ marginBottom: 100 }}>
       <SearchAppBar />
       <ScrollableMenu />
       <ScrollableGenre />
