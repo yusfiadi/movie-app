@@ -17,28 +17,39 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 16,
     paddingRight: 7,
     paddingLeft: 7
+  },
+  appBar: {
+    backgroundColor: 'transparent', 
+    boxShadow: 'none'
   }
 }));
 
 export default function ScrollableGenre() {
   const classes = useStyles();
 
+  const dummyChips= [
+    'Action',
+    'Thriller',
+    'Drama',
+    'Crime',
+    'Comedy',
+    'Horror',
+    'Adventure'
+  ]
+
+  const renderChips = dummyChips.map((chip) => (
+    <Chip label={chip} variant="outlined"  className={classes.chip} />
+  ))
+
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default" style={{ backgroundColor: '#ffffff', boxShadow: 'none' }}>
+      <AppBar position="static" className={classes.appBar}>
         <Tabs
           variant="scrollable"
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
         >
-          <Chip label="Action" variant="outlined"  className={classes.chip} />
-          <Chip label="Crime" variant="outlined"  className={classes.chip} />
-          <Chip label="Comedy" variant="outlined" className={classes.chip} />
-          <Chip label="Drama" variant="outlined"  className={classes.chip} />
-          <Chip label="Horror" variant="outlined"  className={classes.chip} />
-          <Chip label="Romance" variant="outlined"  className={classes.chip} />
-          <Chip label="Thriller" variant="outlined"  className={classes.chip} />
-          <Chip label="Adventure" variant="outlined"  className={classes.chip} />
+          {renderChips}
         </Tabs>
       </AppBar>
     </div>
