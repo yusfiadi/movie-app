@@ -3,63 +3,80 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import Avatar from '@material-ui/core/Avatar';
+import { makeStyles } from '@material-ui/core/styles'
+
 import JamesMangold from '../assets/images/james-mangold.png'
 import MattDamon from '../assets/images/matt-damon.png'
 import ChristianBale from '../assets/images/christian-bale.png'
 import CaitrionaBalfe from '../assets/images/caitriona-balfe.png'
 
+const crews = [
+  {
+    id: 1,
+    name: 'James Mangold',
+    photo: JamesMangold,
+    role: 'Director'
+  },
+  {
+    id: 2,
+    name: 'Matt Damon',
+    photo: MattDamon,
+    role: 'Caroll'
+  },
+  {
+    id: 3,
+    name: 'Christian Bale',
+    photo: ChristianBale,
+    role: 'Ken Miles'
+  },
+  {
+    id: 4,
+    name: 'Caitriona Balfe',
+    photo: CaitrionaBalfe,
+    role: 'Mollie'
+  }
+]
+
+const useStyles = makeStyles((theme) => ({
+  titleStyle: {
+    marginBottom: 15
+  },
+  avatarStyle: {
+    height: 70,
+    width: 70,
+    marginBottom: 10
+  },
+  nameStyle: {
+    marginBottom: 3
+  },
+  roleStyle: {
+    opacity: 0.5
+  }
+}))
 
 const CastAndCrew = () => {
+  const classes = useStyles()
+
+  const CrewLists = crews.map((crew) => (
+    <Grid item xs={3} key={crew.id} >
+      <Box display="flex" justifyContent='center'>
+        <Avatar alt={crew.name} src={crew.photo} className={classes.avatarStyle} />
+      </Box>
+      <Typography variant="body2" align='center' gutterBottom className={classes.nameStyle}>
+        {crew.name}
+      </Typography>
+      <Typography variant="body2" align='center' gutterBottom className={classes.roleStyle}>
+        {crew.role}
+      </Typography>
+    </Grid >
+  ))
   return (
     <div>
-      <Typography variant="h5" align='left' gutterBottom style={{ marginBottom: 15 }}>
+      <Typography variant="h5" align='left' gutterBottom className={classes.titleStyle}>
         Cast & Crew
       </Typography>
       <Grid container spacing={3}>
-        <Grid item xs={3}>
-          <Box display="flex" justifyContent='center'>
-            <Avatar alt="James Mangold" src={JamesMangold} style={{ height: 70, width: 70, marginBottom: 10 }} />
-          </Box>
-          <Typography variant="body2" align='center' gutterBottom style={{ marginBottom: 3 }}>
-            James Mangold
-          </Typography>
-          <Typography variant="body2" align='center' gutterBottom style={{ opacity: 0.5 }}>
-            Director
-          </Typography>
-        </Grid>
-        <Grid item xs={3}>
-          <Box display="flex" justifyContent='center'>
-            <Avatar alt="Matt Damon" src={MattDamon} style={{ height: 70, width: 70, marginBottom: 10 }} />
-          </Box>
-          <Typography variant="body2" align='center' gutterBottom style={{ marginBottom: 3 }}>
-            Matt Damon
-          </Typography>
-          <Typography variant="body2" align='center' gutterBottom style={{ opacity: 0.5 }}>
-            Caroll
-          </Typography>
-        </Grid>
-        <Grid item xs={3}>
-          <Box display="flex" justifyContent='center'>
-            <Avatar alt="Christian Bale" src={ChristianBale} style={{ height: 70, width: 70, marginBottom: 10 }} />
-          </Box>
-          <Typography variant="body2" align='center' gutterBottom style={{ marginBottom: 3 }}>
-            Christian Bale
-          </Typography>
-          <Typography variant="body2" align='center' gutterBottom style={{ opacity: 0.5 }}>
-            Ken Miles
-          </Typography>
-        </Grid>
-        <Grid item xs={3}>
-          <Box display="flex" justifyContent='center'>
-            <Avatar alt="Caitriona Balfe" src={CaitrionaBalfe} style={{ height: 70, width: 70, marginBottom: 10 }} />
-          </Box>
-          <Typography variant="body2" align='center' gutterBottom style={{ marginBottom: 3 }}>
-            Caitriona Balfe
-          </Typography>
-          <Typography variant="body2" align='center' gutterBottom style={{ opacity: 0.5 }}>
-            Mollie
-          </Typography>
-        </Grid>
+        {CrewLists}
       </Grid>
     </div>
   )
